@@ -1,0 +1,37 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+:root{
+    --cyan: #00ffff;
+    --blue: hsl(195, 53%, 79%);
+    --green: #90ee90;
+}
+main{
+    display: flex;
+    flex-flow: row wrap;
+}
+#first,
+#second,
+#third{
+    height: 150px;
+    width: 150px;
+    border: 2px solid rgb(147, 147, 179);
+}
+#second{
+    background-color: var(--cyan);
+}
+#first{
+    background-color: var(--blue);
+}
+#third{
+    background-color: var(--green);
+}
