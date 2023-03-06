@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Bank</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="script.js"></script> -->
+    <!-- <script src="sc2.js"></script> -->
+</head>
+<body>
+    <h1>Mini Bank</h1>
+    <main>
+        <div class="balanceSec">
+            <p id="feedback">---</p>
+           <input type="text" value="0" id="balance" readonly="true">  
+        </div>
+        <div class="amountSec">
+            <input id="amount" type="number">
+        </div>
+        <div class="buttons">
+            <button id="withdraw">+ Withdraw</button>
+            <button id="deposit">- Deposit</button>
+        </div>
+    </main>
+</body>
+<script>
+    const depositBtn    = document.getElementById("deposit")
+    const withdrawBtn   = document.getElementById("withdraw")
+    const amountUI      = document.getElementById("amount")
+    const balanceUI     = document.getElementById("balance")
+    const feedback      = document.getElementById("feedback")
+
+    class bank {
+        constructor (Balance){
+            this.Balance = Balance
+        }
+        deposit(amount) { 
+            this.Balance += amount
+        }
+        withdraw(amount) {
+            if (this.Balance > amount) {
+                this.Balance -= amount
+                feedback.innerText = 'Debited'
+            } else if ( this.Balance - amount <= 0) {
+                feedback.innerText = 'Insufficient Funds'  
+                return
+            } else {
+                feedback.innerText = 'Insufficient Funds'  
+                return
+            }
+        }
+
+    }
+
+    const UBA = new bank(20)
+    UBA.deposit(1000)
+
+    depositBtn.onclick = () => {
+        UBA.deposit(Number(amountUI.value))
+        balanceUI.value = `$${UBA.Balance}`
+        feedback.innerText = 'Credited'
+    }    
+
+    withdrawBtn.onclick = () => { 
+        UBA.withdraw(amountUI.value)
+        balanceUI.value = `$${UBA.Balance}`
+    }
+
+</script>
+</html>

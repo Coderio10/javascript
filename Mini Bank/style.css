@@ -1,0 +1,86 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: monospace; 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+ color: steelblue;  
+}
+/* Balance Section */
+.balanceSec {
+    padding: 20px 0;
+}
+.balanceSec input {
+    width: 250px;
+    height: 50px;
+    text-align: right;
+    padding: 0 20px;
+    font-size: 36px;
+    outline: none;
+    color: steelblue;
+    border: 2px solid steelblue;
+}
+
+/* Amount Section */
+.amountSec {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-bottom: 20px;
+}
+.balanceSec p {
+    text-align: center;
+    line-height: 2.0;
+    color: gray;
+    text-transform: capitalize;
+}
+.amountSec input{
+    text-align: right;
+    width: 150px;
+    height: 30px;
+    padding: 0 10px;
+    outline: none;
+    border: 2px solid steelblue;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.buttons button {
+    width: 85px;
+    height: 35px;
+    background-color: steelblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+/* Hide Number arrows */
+/* Other Browser */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+/* firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+.buttons button:hover {
+    opacity: 0.8;
+}
